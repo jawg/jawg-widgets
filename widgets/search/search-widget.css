@@ -1,0 +1,394 @@
+/**
+ * Copyright (C) 2000-2015 eBusiness Information
+ *
+ * This file is part of MapSquare Widgets.
+ *
+ * MapSquare Widgets is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * MapSquare Widgets is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with MapSquare Widgets.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/**
+ * Created by Anthony Salembier and Jason Conard.
+ */
+.search-widget {
+  position: absolute;
+  top: 10px;
+  left: 30px;
+  width: 0;
+  max-width: calc(100% - 120px);
+  height: calc(100% - 80px);
+  pointer-events: none;
+  z-index : 50;
+  transition : all 200ms ease-out;
+}
+
+.search-widget-open {
+  width: 300px;
+}
+
+.search-widget-closed{
+  width: 0;
+}
+
+
+.search-widget-container {
+  position: relative;
+  z-index: 50;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.search-widget-container > .search-widget-button {
+  position: absolute;
+  width: 40px;
+  height: 30px;
+
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+  top: 0;
+  right: -40px;
+  background: white;
+  border-radius: 0 3px 3px 0;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.5);
+  transition: background 200ms ease-out;
+}
+
+.search-widget-reduce {
+  position: absolute;
+  width: 20px;
+  height: 30px;
+
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+  background: #EEEEEE;
+  left: -20px;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.5);
+  opacity: 1;
+  border-radius: 3px 0 0 3px;
+  transition: opacity 200ms ease-out 200ms;
+}
+
+.search-widget-closed .search-widget-button {
+  border-radius: 3px;
+}
+
+.search-widget-reduce > i {
+  margin: auto;
+  padding-right: 3px;
+}
+.search-widget-reduce:hover {
+  background: #FAFAFA;
+  cursor: pointer;
+}
+
+
+.search-widget-container > .search-widget-button:hover {
+  background: #f4f4f4;
+  cursor: pointer;
+}
+
+.search-widget-container > .search-widget-button > i {
+  margin: auto;
+}
+
+.search-panel-content *, .search-widget-button, .search-widget-reduce {
+  pointer-events: auto;
+}
+
+.search-widget-closed .search-widget-reduce {
+  opacity: 0;
+  pointer-events: none !important;
+}
+.search-widget-closed .search-widget-reduce i {
+  pointer-events: none !important;
+}
+
+.search-panel-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.search-widget-closed .search-panel-content {
+  overflow: hidden;
+}
+
+.search-widget-content {
+  max-height: calc(100% - 100px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: #ffffff;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.5);
+  transition: max-height 200ms ease-out;
+}
+
+.iti-search, .iti-close {
+  box-shadow: 0 3px 5px rgba(0,0,0,0.5);
+  background: white;
+}
+
+.iti-close {
+  padding: 5px;
+  border-top: 1px solid #EEEEEE;
+  transition: background 200ms ease-out;
+  font-size: 12px;
+  display: none;
+}
+.iti-close.shown {
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+.iti-close:hover {
+  background: #EEEEEE;
+}
+
+.iti-close > span {
+  margin: auto;
+}
+
+.search-input {
+  position: relative;
+
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+  z-index: 10;
+  width: 100%;
+  height: 30px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+
+  transition: border 200ms ease-out;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.5);
+  background: white;
+}
+
+.search-input:focus{
+  box-shadow: 0 3px 5px rgba(0,0,0,0.5), inset 0 0 1px black;
+}
+
+.search-input input {
+  -webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-flex: 1;         /* OLD - Firefox 19- */
+  -webkit-flex: 1;          /* Chrome */
+  -ms-flex: 1;              /* IE 10 */
+  flex: 1;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+  padding: 0 5px;
+  font-size: 14px;
+  outline: none;
+  border: none;
+}
+
+.search-widget-closed .search-input input {
+  padding: 0;
+}
+
+.search-input .search-input-icon {
+  border-left: 1px solid #EEEEEE;
+  color: #AAAAAA;
+  display: none;
+  width: 30px;
+}
+
+.search-input .search-input-icon i {
+  margin: auto;
+}
+
+.search-input .search-input-icon.shown {
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+.search-elem {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  padding: 5px;
+
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+  transition: background 200ms ease-out;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 14px;
+}
+
+.search-elem:first-child {
+  margin-top: 5px;
+}
+
+.search-elem:hover {
+  background: #F5F5F5;
+}
+
+.search-elem span {
+  font-size: 14px;
+  margin: auto 0;
+}
+
+.iti-types {
+
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+  height: 30px;
+  width: 100%;
+}
+
+.iti-types .iti-type{
+
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+  -webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-flex: 1;         /* OLD - Firefox 19- */
+  -webkit-flex: 1;          /* Chrome */
+  -ms-flex: 1;              /* IE 10 */
+  flex: 1;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+  background: #F5F5F5;
+  transition: background 200ms ease-out;
+}
+
+.iti-types .iti-type:hover {
+  background: #EEEEEE;
+}
+
+.iti-types .iti-type.selected {
+  background: #E0E0E0;
+}
+
+.iti-types .iti-type i {
+  margin: auto;
+}
+
+.search-widget-journey {
+  margin: 10px;
+  padding: 10px;
+  font-size: 11px;
+  line-height: 14px;
+  border-radius: 3px;
+  box-shadow: 0 2px 4px darkgrey;
+}
+.search-widget-journey h4 {
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.search-widget-journey li {
+  margin-bottom: 10px;
+}
+
+.search-widget-iti {
+  padding: 10px;
+  font-size: 11px;
+  line-height: 14px;
+}
+
+.tpl-pagination {
+
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+  height: 30px;
+}
+
+.tpl-pagination > div {
+  -webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-flex: 1;         /* OLD - Firefox 19- */
+  -webkit-flex: 1;          /* Chrome */
+  -ms-flex: 1;              /* IE 10 */
+  flex: 1;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+.tplp-back i, .tplp-next i, .tplp-text {
+  margin: auto;
+}
+
+.tplp-back, .tplp-next {
+  background-color: #F2F2F2;
+}
+
+.tpl-maneuver {
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+.tpl-maneuver > .tplm-text {
+  -webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-flex: 1;         /* OLD - Firefox 19- */
+  -webkit-flex: 1;          /* Chrome */
+  -ms-flex: 1;              /* IE 10 */
+  flex: 1;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+  padding: 5px;
+}
+
+.tpl-maneuver > .tplm-dist {
+  padding: 0 10px;
+
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+  color: grey;
+}
+
+.tpl-maneuver > .tplm-dist span {
+  margin: auto;
+}

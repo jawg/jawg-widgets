@@ -1,0 +1,74 @@
+<!--
+
+  Copyright (C) 2000-2015 eBusiness Information
+
+  This file is part of MapSquare Widgets.
+
+  MapSquare Widgets is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  MapSquare Widgets is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with MapSquare Widgets.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+
+<!--
+  Created by Anthony Salembier and Jason Conard.
+-->
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.Default.css"/>
+  <link rel="stylesheet" href="style/samples.css"/>
+  <link rel="stylesheet" href="../widgets/search/search-widget.css"/><link rel="stylesheet" href="../widgets/filters/filters-widget.css"/><link rel="stylesheet" href="../widgets/markers/markers-widget.css"/><link rel="stylesheet" href="../widgets/layers/layers-widget.css"/>
+</head>
+
+<body>
+<div class="title">
+  <h2>
+    map<span class="color-blue">square</span> widget (layers + filters)
+  </h2>
+</div>
+<div class="map-position">
+  <div id="widget"></div>
+</div>
+</body>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster.js"></script>
+<script src="../widgets/mapSample.js"></script>
+<script src="../widgets/search/search-widget.js"></script><script src="../widgets/filters/filters-widget.js"></script><script src="../widgets/markers/markers-widget.js"></script><script src="../widgets/layers/layers-widget.js"></script>
+<script>
+  var mapConf = {
+    "tileServer": "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+    "poiServer": "",
+    "mapBounds": [[85, -180], [-65, 180]],
+    "widgetConf": {
+      "panelPosition": "left",
+      "osmSearch": true,
+      "clickMarker": true
+    },
+    "minZoom": 3,
+    "maxZoom": 18,
+    "initialZoom": 3,
+    "initialLocation": [40.734538, -73.9776211],
+    "fitBounds": [[85, -180], [-65, 180]],
+    "clusterMaxLevel": 19
+  };
+  MapManager.callMap('widget', mapConf, [
+    "search-widget",
+    "markers-widget"
+  ]);
+</script>
+</html>

@@ -1,0 +1,127 @@
+/**
+ * Copyright (C) 2000-2015 eBusiness Information
+ *
+ * This file is part of MapSquare Widgets.
+ *
+ * MapSquare Widgets is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * MapSquare Widgets is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with MapSquare Widgets.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/**
+ * Created by Anthony Salembier and Jason Conard.
+ */
+.layer-button {
+  position: absolute;
+  top: 10px;
+  right: 90px;
+  background: white;
+  z-index: 4;
+  width: 27px;
+  height: 27px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  transition: all 200ms ease-out;
+  border-radius: 4px;
+
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+.layer-button.opened {
+  border-radius: 4px 4px 0 0;
+}
+
+.layer-button i {
+  margin: auto;
+  font-size: 16px;
+}
+
+.layer-button:hover {
+  cursor: pointer;
+  background-color: #f4f4f4;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.layer-menu {
+  overflow: hidden;
+  position: absolute;
+  right: 90px;
+  top: 37px;
+  z-index: 5;
+  min-width: 160px;
+  max-height: 0;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  border-radius: 4px 0 4px 4px;
+  transition: all 250ms ease;
+}
+
+.layer-menu.opened {
+  max-height: 180px;
+  padding: 5px 10px;
+}
+
+.layer {
+  margin: 10px 3px;
+  padding: 5px 3px;
+  align-items: center;
+  box-sizing: border-box;
+  text-align: center;
+  cursor: pointer;
+  color: dimgrey;
+  border-radius: 2px;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.4);
+  transition: box-shadow 200ms linear, background-color 200ms linear;
+  background-color: white;
+
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+.layer.activated {
+  border-bottom: solid 2px royalblue;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.5);
+  color: black;
+}
+
+.layer:hover {
+  box-shadow: 0 1px 4px rgba(0,0,0,0.5);
+  background-color: #F4F4F4;
+}
+
+.layer input {
+  background-color: transparent;
+  position: absolute;
+  display: none;
+  pointer-events: none;
+}
+
+.layer label {
+  background-color: transparent;
+  font-size: 13px;
+  cursor: pointer;
+  flex-grow: 1;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.overflow-auto {
+  overflow: auto;
+}
