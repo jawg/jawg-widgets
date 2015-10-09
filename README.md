@@ -6,6 +6,8 @@ This Library allows you to make a seamless integration of a map on your websites
 It uses the latest User Experience guidelines and best practices, and does not require coding skills for integartion.  
 
 ----------
+A video of the widgets in action is available on youtube:  
+https://www.youtube.com/watch?v=W7HanELqEKo
 
 
 Widgets
