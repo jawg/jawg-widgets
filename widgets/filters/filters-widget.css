@@ -93,6 +93,8 @@
   display: -webkit-flex;     /* NEW - Chrome */
   display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
 
+  align-items: center;
+
   top: 0;
   background-color: white;
   border-radius: 2px;

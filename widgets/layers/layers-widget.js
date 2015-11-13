@@ -27,17 +27,22 @@ MapManager.widget['layers-widget'] = function(mapManager) {
   mapManager.layersActivated = true;
   mapManager.layerMenuOpened = false;
 
-  mapManager.activatedZooms = function(poi) {
+  mapManager.activatedZooms = function(elem) {
     var activated = false;
     var zooms = {min:100, max:-1};
-    for (var i = 0; i < mapManager.checkedLayers.length; i++) {
-      if (poi.layers && mapManager.utils.contains(poi.layers, mapManager.checkedLayers[i].id)) {
-        activated = true;
-        if (mapManager.checkedLayers[i].minZoom < zooms.min) {
-          zooms.min = mapManager.checkedLayers[i].minZoom;
-        }
-        if (mapManager.checkedLayers[i].maxZoom > zooms.max) {
-          zooms.max = mapManager.checkedLayers[i].maxZoom;
+    if (!elem.layers) {
+      zooms = {min: mapManager.conf.minZoom, max: mapManager.conf.maxZoom};
+      activated = true;
+    } else {
+      for (var i = 0; i < mapManager.checkedLayers.length; i++) {
+        if (elem.layers && mapManager.utils.contains(elem.layers, mapManager.checkedLayers[i].id)) {
+          activated = true;
+          if (mapManager.checkedLayers[i].minZoom < zooms.min) {
+            zooms.min = mapManager.checkedLayers[i].minZoom;
+          }
+          if (mapManager.checkedLayers[i].maxZoom > zooms.max) {
+            zooms.max = mapManager.checkedLayers[i].maxZoom;
+          }
         }
       }
     }

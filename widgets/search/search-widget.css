@@ -68,6 +68,10 @@
   transition: background 200ms ease-out;
 }
 
+.search-widget-container > .search-widget-button i {
+  line-height: 30px;
+}
+
 .search-widget-reduce {
   position: absolute;
   width: 20px;

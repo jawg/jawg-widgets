@@ -96,6 +96,7 @@
 .poi-widget-show-btn i {
   transition: transform 200ms ease-out;
   margin: auto;
+  line-height: 40px;
 }
 
 .poi-panel-close .poi-widget-show-btn > i {
@@ -167,11 +168,7 @@
 }
 
 .poi-widget-point-pic {
-  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
-  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
-  display: -ms-flexbox;      /* TWEENER - IE 10 */
-  display: -webkit-flex;     /* NEW - Chrome */
-  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  text-align: center;
   width: 40px;
   height: 40px;
   box-shadow : 0 4px 6px rgba(0,0,0,0.4);
