@@ -39,6 +39,10 @@
   display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
 }
 
+.layer-button i {
+  line-height: 27px;
+}
+
 .layer-button.opened {
   border-radius: 4px 4px 0 0;
 }

@@ -134,6 +134,8 @@ MapManager.widget['filters-widget'] = function(mapManager) {
           if (mapManager.map.getZoom() >= zooms.min && mapManager.map.getZoom() <= zooms.max) {
             displayMarker += 1;
           }
+        } else if (!point.layers) {
+          displayMarker += 1;
         }
       }
 

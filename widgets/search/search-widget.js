@@ -533,7 +533,6 @@ MapManager.widget['search-widget'] = function(mapManager) {
   var showSearchItem = function(searchItem) {
     // Add the template in the view
     var notVisible = false;
-    console.log(searchItem);
     if (searchItem.internal) {
       for (var i = 0; i < mapManager.conf.points.length && !notVisible; i++) {
         if (!mapManager.conf.points[i].enable && mapManager.conf.points[i].name === searchItem.name) {
